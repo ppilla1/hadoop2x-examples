@@ -37,11 +37,14 @@ public class App
 				throws IOException, InterruptedException {
 			String[] fields = value.toString().split(",");
 			
-			if (fields.length > 6 && fields[1].equals("1") && fields[5].equals("\\d+")){
+			if (fields.length > 6 && fields[1].equals("0") && fields[5].matches("\\d+")){
 				Text category = new Text(fields[4]);
 				IntWritable age = new IntWritable(Integer.parseInt(fields[5]));
 				
+				LOG.info("[MAP] Category["+category.toString()+"]-Age["+age.get()+"]");
 				context.write(category, age);
+			}else{
+				LOG.error("[MAP] Notting mapped for -> "+ value.toString());
 			}
 			
 		}
@@ -65,6 +68,7 @@ public class App
 				}
 				
 				if (count > 0){
+					LOG.info("[REDUCE] Category["+key.toString()+"]-Age["+totalAge/count+"]");
 					context.write(key, new IntWritable(totalAge/count));
 				}
 		}
