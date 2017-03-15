@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.disknotfound</groupId>
-  <artifactId>hadoop2x-examples</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>hadoop2x-examples</name>
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.disknotfound</groupId>
+	<artifactId>hadoop2x-examples</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>hadoop2x-examples</name>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<java.home>C:/Java/jdk1.8.0_112</java.home>
+		<java.home>D:/apps/Java/jdk1.8.0_102</java.home>
 		<slf4j.version>1.7.7</slf4j.version>
+		
+		<!-- hadoop dependency version -->
+		<hadoop.version>2.7.2</hadoop.version>
+
+		<!-- spark dependency version -->
+		<scala.version>2.11.5</scala.version>
+		<scala.compat.version>2.11</scala.compat.version>
+		<spark.version>2.1.0</spark.version>
+		<kafka.version>0.10.1.1</kafka.version>
+				
+		<!-- unit test framework -->
 		<junit.version>4.12</junit.version>
 		<mockito.version>1.10.19</mockito.version>
 		<mrunit.version>1.1.0</mrunit.version>
-		<hadoop.version>2.7.2</hadoop.version>
-  </properties>
-  <modules>
-  	<module>mapreduce2x-titanic-avgAge-job</module>
-  	<module>mapreduce2x-titanic-classViseSurvive-job</module>
-    <module>mapreduce2x-customType-job</module>
-  </modules>
+		<scalatest.version>3.0.0-M15</scalatest.version>
+		<specs2.version>3.7.2</specs2.version>
+	</properties>
+	<modules>
+		<module>mapreduce2x-titanic-avgAge-job</module>
+		<module>mapreduce2x-titanic-classViseSurvive-job</module>
+		<module>mapreduce2x-customType-job</module>
+		<module>spark-scala-wordcount</module>
+	</modules>
 </project>
